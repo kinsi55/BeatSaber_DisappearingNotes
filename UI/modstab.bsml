@@ -1,0 +1,57 @@
+﻿<vertical xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='- https://raw.githubusercontent.com/monkeymanboy/BSML-Docs/gh-pages/BSMLSchema.xsd'>
+	<modifier-container child-expand-width='true' horizontal-fit='PreferredSize'>
+		<macro.as-host host='config'>
+			<toggle-setting
+				text='Enable'
+				value='enable'
+				bind-value='true'
+				apply-on-change='true'/>
+			<toggle-setting
+				text='Visible in VR (Disables Submission)'
+				value='enableInVR'
+				bind-value='true'
+				apply-on-change='true'/>
+
+			<slider-setting
+				text='Fade end'
+				value='fadeEndDistance'
+				min='1'
+				max='6'
+				increment='0.1'
+				hover-hint='At what distance from the player should the notes be hidden?'
+				bind-value='true'
+				apply-on-change='true'/>
+			<slider-setting
+				text='Fade distance'
+				value='fadeDistanceDuration'
+				min='1'
+				max='10'
+				increment='0.2'
+				hover-hint='Over what distance should the notes fade out?'
+				bind-value='true'
+				apply-on-change='true'/>
+		</macro.as-host>
+	</modifier-container>
+	<horizontal>
+		<text text="~version" align="Center" font-size="3" font-color="#CC6E3B"/>
+		<clickable-text text='♥ Donate' font-size="4" align="Center" click-event="OpenSponsorModal" on-click="OpenSponsorsModal"/>
+	</horizontal>
+	<modal move-to-center='true' hide-event='CloseSponsorModal' show-event='OpenSponsorModal' size-delta-x='80' size-delta-y='82'>
+		<vertical preferred-width='80' vertical-fit='PreferredSize' pad-left='2' pad-right='2' spacing='2' child-expand-width='true'>
+			<horizontal pad-bottom='2' pad-top='1'>
+				<horizontal bg='panel-top-gradient'>
+					<text text="Disappearing Notes - Sponsors" align='Center' font-size='4'/>
+				</horizontal>
+			</horizontal>
+			<text text='Are you enjoying my stuff and want to support me?' align='Center'/>
+			<horizontal>
+				<primary-button text='Open Website on Desktop' on-click='OpenSponsorsLink'/>
+				<button text='Close' click-event='CloseSponsorModal'/>
+			</horizontal>
+			<text text='Current sponsors' align='Center'/>
+			<vertical horizontal-fit='Unconstrained' vertical-fit='Unconstrained' preferred-height='45'>
+				<text-page id='sponsorsText' text='Loading...'/>
+			</vertical>
+		</vertical>
+	</modal>
+</vertical>
