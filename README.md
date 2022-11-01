@@ -1,4 +1,4 @@
-# Disappearin gNotes
+# Disappearing Notes
 
 Changes how the Ghost Notes modifier works. This is primarily meant to make Ghost Notes more easily viewable on the Desktop but can also be enabled in VR (Disables Score Submission).
 
